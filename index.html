@@ -192,6 +192,8 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
   .goal-section { grid-template-columns: 1fr; }
   .pred-insights { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: 1fr 1fr; }
+  #histRows > div { grid-template-columns: 1fr 1fr auto !important; }
+  #histRows > div > div:first-child { grid-column: 1 / -2; }
 }
 </style>
 </head>
@@ -201,7 +203,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
 <header>
   <div class="logo">
     <span class="logo-name">CGPA Compass</span>
-    <span class="logo-tag">~95% prediction accuracy</span>
+    <span class="logo-tag">~90% prediction accuracy</span>
   </div>
   <div class="header-actions">
     <button class="theme-btn" onclick="toggleTheme()">toggle theme</button>
@@ -619,21 +621,21 @@ function addHistRow() {
   const wrap=document.getElementById('histRows');
   const div=document.createElement('div');
   div.id='hist-'+id;
-  div.style.cssText='display:flex;gap:10px;align-items:center;';
+  div.style.cssText='display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:end;';
   div.innerHTML=`
-    <div style="flex:0 0 100px">
+    <div>
       <div class="field-label" style="margin-bottom:4px">Semester ${id+1}</div>
-      <input class="field-input" type="text" value="Sem ${id+1}" id="hname-${id}" style="padding:6px 10px;font-size:13px;">
+      <input class="field-input" type="text" value="Sem ${id+1}" id="hname-${id}" style="padding:6px 10px;font-size:13px;width:100%;">
     </div>
-    <div style="flex:0 0 100px">
+    <div>
       <div class="field-label" style="margin-bottom:4px">SGPI</div>
-      <input class="field-input" type="number" min="0" max="10" step="0.01" placeholder="e.g. 7.80" id="hsgpi-${id}" style="padding:6px 10px;font-size:13px;">
+      <input class="field-input" type="number" min="0" max="10" step="0.01" placeholder="e.g. 7.80" id="hsgpi-${id}" style="padding:6px 10px;font-size:13px;width:100%;">
     </div>
-    <div style="flex:0 0 80px">
+    <div>
       <div class="field-label" style="margin-bottom:4px">Credits</div>
-      <input class="field-input" type="number" min="1" max="30" placeholder="24" id="hcr-${id}" style="padding:6px 10px;font-size:13px;">
+      <input class="field-input" type="number" min="1" max="30" placeholder="24" id="hcr-${id}" style="padding:6px 10px;font-size:13px;width:100%;">
     </div>
-    <button class="rm-btn" onclick="document.getElementById('hist-${id}').remove()" style="margin-top:18px;">✕</button>
+    <button class="rm-btn" onclick="document.getElementById('hist-${id}').remove()" style="margin-bottom:2px;">✕</button>
   `;
   wrap.appendChild(div);
 }
@@ -688,3 +690,4 @@ addHistRow();addHistRow();
 </script>
 </body>
 </html>
+ 
