@@ -236,7 +236,6 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
         <div style="font-size:11px;color:var(--text3);margin-top:6px;">C<sub>i</sub> = subject credit &nbsp;&middot;&nbsp; G<sub>i</sub> = grade points earned &nbsp;&middot;&nbsp; F / AB = 0 pts</div>
       </div>
     </div>
-    </div>
   </div>
  
   <div class="card">
@@ -350,9 +349,9 @@ function toggleTheme() {
 }
  
 function switchTab(name, el) {
-  document.getElementById('tab-predictor').style.display = name==='predictor' ? '' : 'none';
-  document.getElementById('tab-goal').style.display      = name==='goal'      ? '' : 'none';
-  document.getElementById('tab-history').style.display   = name==='history'   ? '' : 'none';
+  ['predictor','goal','history'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = (t === name) ? 'block' : 'none';
+  });
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
 }
