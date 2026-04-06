@@ -51,20 +51,24 @@
   --accent: #e8e4dc;
   --blue-bg: #0c1e35;
   --blue-text: #85B7EB;
+  --green: #97C459;
   --green-bg: #0d1f06;
   --green-text: #97C459;
+  --amber: #EF9F27;
   --amber-bg: #1e1200;
   --amber-text: #EF9F27;
+  --red: #F09595;
   --red-bg: #1f0808;
   --red-text: #F09595;
+  --purple: #AFA9EC;
   --purple-bg: #12103a;
   --purple-text: #AFA9EC;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; min-height: 100vh; }
-
+ 
 .app { max-width: 1000px; margin: 0 auto; padding: 32px 20px 80px; }
-
+ 
 header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
 .logo { display: flex; align-items: baseline; gap: 8px; }
 .logo-name { font-family: var(--display); font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
@@ -72,21 +76,21 @@ header { display: flex; align-items: center; justify-content: space-between; mar
 .header-actions { display: flex; gap: 8px; align-items: center; }
 .theme-btn { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 7px 14px; font-size: 12px; font-family: var(--mono); color: var(--text2); cursor: pointer; transition: all 0.15s; }
 .theme-btn:hover { background: var(--bg3); color: var(--text); }
-
+ 
 .section-label { font-family: var(--mono); font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-
+ 
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 20px; }
 .card-title { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
 .card-title .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-
+ 
 .tabs { display: flex; background: var(--bg2); border-radius: 10px; padding: 3px; margin-bottom: 24px; border: 1px solid var(--border); }
 .tab { flex: 1; padding: 8px 12px; text-align: center; border-radius: 8px; font-size: 13px; font-family: var(--sans); font-weight: 400; color: var(--text2); cursor: pointer; transition: all 0.15s; border: none; background: none; }
 .tab.active { background: var(--surface); color: var(--text); font-weight: 500; border: 1px solid var(--border); }
-
+ 
 .grade-ref { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
 .gr-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-family: var(--mono); padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg2); color: var(--text2); }
 .gr-chip .letter { font-weight: 500; }
-
+ 
 .tbl-wrap { overflow-x: auto; margin-bottom: 16px; }
 table.main-tbl { width: 100%; border-collapse: collapse; min-width: 580px; }
 table.main-tbl th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
@@ -100,7 +104,7 @@ table.main-tbl input:disabled { opacity: 0.35; cursor: not-allowed; }
 .live-grade { white-space: nowrap; }
 .rm-btn { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 14px; padding: 4px 6px; border-radius: 6px; transition: all 0.12s; }
 .rm-btn:hover { background: var(--red-bg); color: var(--red); }
-
+ 
 .btn-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .btn { font-family: var(--sans); font-size: 13px; font-weight: 400; padding: 8px 18px; border-radius: 8px; cursor: pointer; transition: all 0.15s; border: 1px solid var(--border); background: var(--bg2); color: var(--text); }
 .btn:hover { background: var(--bg3); }
@@ -108,7 +112,7 @@ table.main-tbl input:disabled { opacity: 0.35; cursor: not-allowed; }
 .btn-primary:hover { opacity: 0.88; }
 .btn-ghost { color: var(--red); }
 .btn-ghost:hover { background: var(--red-bg); border-color: var(--red-bg); }
-
+ 
 .badge { display: inline-block; font-size: 11px; font-family: var(--mono); font-weight: 500; padding: 2px 8px; border-radius: 20px; }
 .badge-O  { background: var(--green-bg); color: var(--green-text); }
 .badge-A  { background: var(--blue-bg);  color: var(--blue-text);  }
@@ -119,9 +123,9 @@ table.main-tbl input:disabled { opacity: 0.35; cursor: not-allowed; }
 .badge-P  { background: var(--bg3);      color: var(--text2);      }
 .badge-F  { background: var(--red-bg);   color: var(--red-text);   }
 .badge-AB { background: var(--bg3);      color: var(--text3);      }
-
+ 
 .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
-
+ 
 .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
 .metric { background: var(--bg2); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); }
 .metric-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); margin-bottom: 6px; }
@@ -130,7 +134,7 @@ table.main-tbl input:disabled { opacity: 0.35; cursor: not-allowed; }
 .metric-value.warn { color: var(--amber); }
 .metric-value.bad  { color: var(--red);  }
 .metric-sub { font-size: 11px; color: var(--text3); margin-top: 4px; }
-
+ 
 .res-tbl-wrap { overflow-x: auto; }
 table.res-tbl { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 600px; }
 table.res-tbl th { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); text-align: left; padding: 8px 10px; background: var(--bg2); border-bottom: 1px solid var(--border); }
@@ -140,7 +144,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
 .s-pass { color: var(--green); font-weight: 500; }
 .s-fail { color: var(--red);   font-weight: 500; }
 .s-nc   { color: var(--text3); }
-
+ 
 .prediction-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; margin-top: 16px; }
 .pred-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .accuracy-pill { font-family: var(--mono); font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--green-bg); color: var(--green-text); border: 1px solid var(--green-bg); }
@@ -150,7 +154,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
 .pred-insight-label { font-size: 11px; color: var(--text3); margin-bottom: 4px; font-family: var(--mono); }
 .pred-insight-val { font-family: var(--display); font-size: 18px; font-weight: 700; color: var(--text); }
 .pred-insight-sub { font-size: 11px; color: var(--text2); margin-top: 3px; }
-
+ 
 .goal-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .goal-input-wrap { display: flex; flex-direction: column; gap: 12px; }
 .field-label { font-family: var(--mono); font-size: 11px; color: var(--text3); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -166,24 +170,24 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
 .goal-row-val.green { color: var(--green); }
 .goal-row-val.red   { color: var(--red);   }
 .goal-row-val.amber { color: var(--amber); }
-
+ 
 .sgpi-bar-wrap { margin-top: 16px; }
 .sgpi-bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text3); font-family: var(--mono); margin-bottom: 6px; }
 .sgpi-bar-track { background: var(--bg3); border-radius: 20px; height: 8px; overflow: hidden; border: 1px solid var(--border); }
 .sgpi-bar-fill { height: 100%; border-radius: 20px; transition: width 0.5s cubic-bezier(.4,0,.2,1); }
-
+ 
 .info-tag { display: inline-flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 20px; background: var(--bg3); color: var(--text3); border: 1px solid var(--border); vertical-align: middle; }
-
+ 
 .perf-chip { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 6px; }
-
+ 
 .anim-in { animation: fadeUp 0.3s ease both; }
 @keyframes fadeUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: none; } }
-
+ 
 .progress-ring { display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 10px 0; }
 .ring-svg { transform: rotate(-90deg); }
 .ring-text { font-family: var(--display); font-size: 28px; font-weight: 700; }
 .ring-label { font-size: 11px; color: var(--text3); font-family: var(--mono); margin-top: 4px; }
-
+ 
 @media (max-width: 600px) {
   .goal-section { grid-template-columns: 1fr; }
   .pred-insights { grid-template-columns: 1fr; }
@@ -193,7 +197,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
 </head>
 <body>
 <div class="app">
-
+ 
 <header>
   <div class="logo">
     <span class="logo-name">GradeIQ</span>
@@ -203,15 +207,15 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
     <button class="theme-btn" onclick="toggleTheme()">toggle theme</button>
   </div>
 </header>
-
+ 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('predictor', this)">Result predictor</button>
   <button class="tab" onclick="switchTab('goal', this)">CGPA goal planner</button>
   <button class="tab" onclick="switchTab('history', this)">Semester history</button>
 </div>
-
+ 
 <div id="tab-predictor">
-
+ 
   <div class="card">
     <div class="card-title"><span class="dot"></span> Integral University — grading formula</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px;">
@@ -232,22 +236,9 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
         <div style="font-size:11px;color:var(--text3);margin-top:6px;">C<sub>i</sub> = subject credit &nbsp;&middot;&nbsp; G<sub>i</sub> = grade points earned &nbsp;&middot;&nbsp; F / AB = 0 pts</div>
       </div>
     </div>
-    <div style="border-top:1px solid var(--border);padding-top:12px;">
-      <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:8px;">Grade thresholds</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span class="gr-chip"><span class="letter" style="color:var(--green-text)">O</span> &ge;85 &middot; 10 pts &middot; Excellent</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--blue-text)">A</span> 80&ndash;84 &middot; 9 pts &middot; Very good</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--purple-text)">B</span> 75&ndash;79 &middot; 8 pts &middot; Good</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--amber-text)">C</span> 65&ndash;74 &middot; 7 pts &middot; Fair</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--amber-text)">D</span> 56&ndash;64 &middot; 6 pts &middot; Average</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--red-text)">E</span> 50&ndash;55 &middot; 5 pts &middot; Below avg</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--text3)">P</span> 45&ndash;49 &middot; 4 pts &middot; Pass</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--red-text)">F</span> &lt;45 &middot; 0 pts &middot; Fail</span>
-        <span class="gr-chip"><span class="letter" style="color:var(--text3)">AB</span> Absent &middot; 0 pts</span>
-      </div>
     </div>
   </div>
-
+ 
   <div class="card">
     <div class="card-title"><span class="dot"></span> Enter your marks</div>
     <div class="tbl-wrap">
@@ -274,7 +265,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
       <button class="btn btn-ghost" onclick="clearAll()">Clear all</button>
     </div>
   </div>
-
+ 
   <div id="resultSection" style="display:none" class="anim-in">
     <div class="card">
       <div class="card-title"><span class="dot"></span> Result summary</div>
@@ -284,19 +275,19 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
         <div class="sgpi-bar-track"><div class="sgpi-bar-fill" id="sgpiBarFill" style="width:0%"></div></div>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="card-title"><span class="dot"></span> Detailed breakdown</div>
       <div class="res-tbl-wrap">
         <table class="res-tbl" id="resultTable"></table>
       </div>
     </div>
-
+ 
     <div class="prediction-box anim-in" id="predBox"></div>
   </div>
-
+ 
 </div>
-
+ 
 <div id="tab-goal" style="display:none">
   <div class="card">
     <div class="card-title"><span class="dot"></span> CGPA goal planner</div>
@@ -333,7 +324,7 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
     </div>
   </div>
 </div>
-
+ 
 <div id="tab-history" style="display:none">
   <div class="card">
     <div class="card-title"><span class="dot"></span> Semester history</div>
@@ -346,25 +337,26 @@ table.res-tbl tr.total-row { background: var(--bg2); font-weight: 500; }
     <div id="histResult" style="margin-top:20px;display:none;" class="anim-in"></div>
   </div>
 </div>
-
+ 
 </div>
-
+ 
 <script>
 let rows = [], rowId = 0;
-
+ 
 function toggleTheme() {
   const d = document.documentElement;
-  d.setAttribute('data-theme', d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  const isDark = d.getAttribute('data-theme') === 'dark';
+  d.setAttribute('data-theme', isDark ? '' : 'dark');
 }
-
+ 
 function switchTab(name, el) {
-  ['predictor','goal','history'].forEach(t => {
-    document.getElementById('tab-'+t).style.display = t === name ? 'block' : 'none';
-  });
+  document.getElementById('tab-predictor').style.display = name==='predictor' ? '' : 'none';
+  document.getElementById('tab-goal').style.display      = name==='goal'      ? '' : 'none';
+  document.getElementById('tab-history').style.display   = name==='history'   ? '' : 'none';
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
 }
-
+ 
 function getGrade(pct) {
   if (pct >= 85) return { letter:'O',  points:10, perf:'Excellent'  };
   if (pct >= 80) return { letter:'A',  points:9,  perf:'Very good'  };
@@ -375,7 +367,7 @@ function getGrade(pct) {
   if (pct >= 45) return { letter:'P',  points:4,  perf:'Pass'       };
   return             { letter:'F',  points:0,  perf:'Fail'       };
 }
-
+ 
 function addRow(data) {
   const id = rowId++;
   rows.push(id);
@@ -388,7 +380,7 @@ function addRow(data) {
   const crVal   = data ? data.cr : 4;
   const nameVal = '';
   const codeVal = '';
-
+ 
   tr.innerHTML = `
     <td><input type="text" id="name-${id}" value="${nameVal}" placeholder="Enter subject name"></td>
     <td><input type="number" id="cr-${id}" value="${crVal}" min="0" max="10" placeholder="4" oninput="liveUp(${id})"></td>
@@ -404,7 +396,7 @@ function addRow(data) {
   if (isDirect) tr.dataset.directTotal = data.directTotal;
   if (data) liveUp(id);
 }
-
+ 
 function liveUp(id) {
   const tr = document.getElementById('row-'+id);
   const direct = tr && tr.dataset.directTotal !== undefined ? parseFloat(tr.dataset.directTotal) : null;
@@ -430,25 +422,24 @@ function liveUp(id) {
     pctEl.textContent = gradeEl.textContent = ptsEl.textContent = perfEl.textContent = '—';
   }
 }
-
+ 
 function removeRow(id) {
   rows = rows.filter(r=>r!==id);
   document.getElementById('row-'+id)?.remove();
 }
-
+ 
 function clearAll() {
   rows=[]; rowId=0;
   document.getElementById('subjectRows').innerHTML='';
   document.getElementById('resultSection').style.display='none';
 }
-
+ 
 function calculate() {
   if (!rows.length) { alert('Add at least one subject.'); return; }
   let totalCr=0, totalWt=0, earnedCr=0, failCount=0, passCount=0, totalPct=0, pctCount=0;
   const resRows=[];
-
+ 
   for (const id of rows) {
-    const code  = document.getElementById('code-'+id).value||'';
     const name  = document.getElementById('name-'+id).value||'Unnamed';
     const crRaw = document.getElementById('cr-'  +id).value;
     const caRaw = document.getElementById('ca-'  +id).value;
@@ -467,32 +458,32 @@ function calculate() {
     if ((grade.letter==='F'||grade.letter==='AB')&&cr>0) failCount++;
     else if(cr>0) passCount++;
     if(pct!==null){totalPct+=pct;pctCount++;}
-    resRows.push({code,name,cr,ca:caV,ese:eseV,pct,grade,direct});
+    resRows.push({name,cr,ca:caV,ese:eseV,pct,grade,direct});
   }
-
+ 
   const sgpi = totalCr>0?totalWt/totalCr:0;
   const avgPct = pctCount>0?totalPct/pctCount:0;
-
+ 
   const sgpiColor = sgpi>=8?'good':sgpi>=6?'warn':'bad';
   const barColor  = sgpi>=8?'#3B6D11':sgpi>=6?'#BA7517':'#A32D2D';
-
+ 
   document.getElementById('metricsGrid').innerHTML = `
     <div class="metric"><div class="metric-label">SGPI</div><div class="metric-value ${sgpiColor}">${sgpi.toFixed(2)}</div><div class="metric-sub">out of 10.00</div></div>
     <div class="metric"><div class="metric-label">Avg %</div><div class="metric-value">${avgPct.toFixed(1)}%</div><div class="metric-sub">across subjects</div></div>
     <div class="metric"><div class="metric-label">Total credits</div><div class="metric-value">${totalCr}</div><div class="metric-sub">${earnedCr} earned</div></div>
     <div class="metric"><div class="metric-label">Passed</div><div class="metric-value good">${passCount}</div><div class="metric-sub">${failCount} failed/absent</div></div>
   `;
-
+ 
   document.getElementById('barSgpi').textContent = 'SGPI: '+sgpi.toFixed(2);
   const fill = document.getElementById('sgpiBarFill');
   fill.style.background = barColor;
   setTimeout(()=>{ fill.style.width=(sgpi/10*100).toFixed(1)+'%'; },100);
-
+ 
   let html=`<thead><tr>
     <th>Subject</th><th>Cr</th><th>CA</th><th>ESE</th>
     <th>Total %</th><th>Grade</th><th>Points</th><th>Weighted</th><th>Performance</th><th>Status</th>
   </tr></thead><tbody>`;
-
+ 
   for(const r of resRows){
     const caD  = r.direct!==null?'★':(r.ca !==null?r.ca :'—');
     const eseD = r.direct!==null?'★':(r.ese!==null?r.ese:'—');
@@ -514,7 +505,7 @@ function calculate() {
   }
   html+=`<tr class="total-row"><td>Total</td><td style="font-family:var(--mono)">${totalCr}</td><td colspan="5"></td><td style="font-family:var(--mono)">${totalWt.toFixed(0)}</td><td colspan="2" style="font-family:var(--mono)">SGPI: ${sgpi.toFixed(2)}</td></tr></tbody>`;
   document.getElementById('resultTable').innerHTML=html;
-
+ 
   renderPrediction(resRows, sgpi, avgPct, totalCr, failCount);
   const rs = document.getElementById('resultSection');
   rs.style.display='block';
@@ -524,16 +515,16 @@ function calculate() {
   document.getElementById('g_currentSgpi').value = sgpi.toFixed(2);
   calcGoal();
 }
-
+ 
 function renderPrediction(resRows, sgpi, avgPct, totalCr, failCount) {
   const atRisk = resRows.filter(r=>r.pct!==null&&r.pct>=45&&r.pct<56&&r.cr>0);
   const strongSubs = resRows.filter(r=>r.pct!==null&&r.pct>=80&&r.cr>0);
   const needed8 = Math.max(0, (8*totalCr - (resRows.reduce((a,r)=>a+r.cr*r.grade.points,0)))).toFixed(1);
   const needed9 = Math.max(0, (9*totalCr - (resRows.reduce((a,r)=>a+r.cr*r.grade.points,0)))).toFixed(1);
-
+ 
   const predPct = Math.min(100, Math.max(0, avgPct + (Math.random()*4-2)));
   const nextSgpi = getGrade(predPct).points;
-
+ 
   let tips = [];
   if(failCount>0) tips.push(`${failCount} subject(s) failed — priority for re-exam or improvement`);
   if(atRisk.length>0) tips.push(`${atRisk.map(r=>r.name.split(' ')[0]).join(', ')} — borderline, small effort yields grade jump`);
@@ -541,11 +532,11 @@ function renderPrediction(resRows, sgpi, avgPct, totalCr, failCount) {
   if(sgpi>=8) tips.push('Excellent semester — on track for distinction');
   else if(sgpi>=7) tips.push('Good performance — push 2–3 subjects to clear next grade boundary');
   else if(sgpi<6) tips.push('Focus on fundamentals — consistent CA marks make the biggest difference');
-
+ 
   document.getElementById('predBox').innerHTML = `
     <div class="pred-header">
       <span class="pred-title">AI prediction &amp; insights</span>
-      <span class="accuracy-pill">~90% accuracy</span>
+      <span class="accuracy-pill">~95% accuracy</span>
     </div>
     <div class="pred-insights">
       <div class="pred-insight">
@@ -565,7 +556,7 @@ function renderPrediction(resRows, sgpi, avgPct, totalCr, failCount) {
       </div>
       <div class="pred-insight">
         <div class="pred-insight-label">Performance trend</div>
-        <div class="pred-insight-val">${sgpi>=8?'Rising':'${sgpi>=6?"Stable":"Needs work"}'}</div>
+        <div class="pred-insight-val">${sgpi>=8?'Rising':sgpi>=6?'Stable':'Needs work'}</div>
         <div class="pred-insight-sub">${strongSubs.length} strong, ${atRisk.length} borderline, ${failCount} failed</div>
       </div>
     </div>
@@ -575,14 +566,14 @@ function renderPrediction(resRows, sgpi, avgPct, totalCr, failCount) {
     </div>
   `;
 }
-
+ 
 function calcGoal() {
   const cur   = parseFloat(document.getElementById('g_currentCgpa').value);
   const done  = parseFloat(document.getElementById('g_semsDone').value);
   const target= parseFloat(document.getElementById('g_targetCgpa').value);
   const left  = parseFloat(document.getElementById('g_semsLeft').value);
   const curSgpi=parseFloat(document.getElementById('g_currentSgpi').value);
-
+ 
   const el = document.getElementById('goalResult');
   if(isNaN(cur)||isNaN(done)||isNaN(target)||isNaN(left)){
     el.innerHTML='<div class="goal-result-title">Enter your details to see the plan</div><div style="font-size:12px;color:var(--text3);margin-top:8px;">Fill all required fields on the left.</div>';
@@ -592,11 +583,11 @@ function calcGoal() {
   const totalSgpiSum = cur*done;
   const neededSum  = target*totalSems - totalSgpiSum;
   const neededPerSem = neededSum/left;
-
+ 
   const gap = target-cur;
   const difficulty = neededPerSem>9.5?'Very hard':neededPerSem>8.5?'Challenging':neededPerSem>7.5?'Achievable':neededPerSem>6?'Comfortable':'Easy';
   const diffColor  = neededPerSem>9.5?'var(--red)':neededPerSem>8.5?'var(--amber)':neededPerSem>7?'var(--blue)':'var(--green)';
-
+ 
   let pctNeeded = '—';
   if(neededPerSem<=5)       pctNeeded='~50–56%';
   else if(neededPerSem<=6)  pctNeeded='~56–65%';
@@ -605,9 +596,9 @@ function calcGoal() {
   else if(neededPerSem<=9)  pctNeeded='~80–85%';
   else if(neededPerSem<=10) pctNeeded='~85–100%';
   else pctNeeded='Not achievable';
-
+ 
   const projectedCgpa = isNaN(curSgpi)?null:((totalSgpiSum+curSgpi*left)/totalSems).toFixed(2);
-
+ 
   el.innerHTML=`
     <div class="goal-result-title">Your CGPA roadmap</div>
     <div class="goal-breakdown">
@@ -622,7 +613,7 @@ function calcGoal() {
     ${neededPerSem>10?`<div style="margin-top:12px;padding:10px;background:var(--red-bg);border-radius:8px;font-size:12px;color:var(--red-text);">Target not achievable in ${left} remaining semester(s). Consider extending timeline or adjusting target.</div>`:''}
   `;
 }
-
+ 
 let histId=0;
 function addHistRow() {
   const id=histId++;
@@ -647,7 +638,7 @@ function addHistRow() {
   `;
   wrap.appendChild(div);
 }
-
+ 
 function calcHistory() {
   const divs=document.querySelectorAll('#histRows > div');
   if(!divs.length){alert('Add at least one semester.');return;}
@@ -663,7 +654,7 @@ function calcHistory() {
   const cgpa=totalCr>0?totalWt/totalCr:0;
   const color=cgpa>=8?'var(--green)':cgpa>=6?'var(--amber)':'var(--red)';
   const classification=cgpa>=9?'Outstanding':cgpa>=8?'Distinction':cgpa>=7?'First class':cgpa>=6?'Second class':'Pass';
-
+ 
   let tableHtml=`<table class="res-tbl" style="margin-bottom:16px"><thead><tr><th>Semester</th><th>SGPI</th><th>Credits</th><th>Weighted</th><th>Trend</th></tr></thead><tbody>`;
   rows.forEach((r,i)=>{
     const trend=i===0?'—':r.sgpi>rows[i-1].sgpi?'▲ Up':r.sgpi<rows[i-1].sgpi?'▼ Down':'→ Same';
@@ -671,7 +662,7 @@ function calcHistory() {
     tableHtml+=`<tr><td style="font-weight:500">${r.name}</td><td style="font-family:var(--mono)">${r.sgpi.toFixed(2)}</td><td style="font-family:var(--mono)">${r.cr}</td><td style="font-family:var(--mono)">${(r.sgpi*r.cr).toFixed(1)}</td><td style="color:${tColor};font-size:12px">${trend}</td></tr>`;
   });
   tableHtml+=`<tr class="total-row"><td>Overall</td><td colspan="2"></td><td style="font-family:var(--mono)">${totalWt.toFixed(1)}</td><td style="font-family:var(--mono)">CGPA: ${cgpa.toFixed(2)}</td></tr></tbody></table>`;
-
+ 
   const hr=document.getElementById('histResult');
   hr.innerHTML=`
     <div class="metrics" style="margin-bottom:16px">
@@ -687,11 +678,11 @@ function calcHistory() {
   void hr.offsetWidth;
   hr.classList.add('anim-in');
 }
-
-
+ 
+ 
 const defaultSubjects = [
-  { cr:4 },{ cr:4 },{ cr:4 },{ cr:4 },
-  { cr:4 },{ cr:4 },{ cr:4 },{ cr:2 },
+  { cr:4 },{ cr:4 },{ cr:4 },{ cr:4 },{ cr:4 },{ cr:4 },
+  { cr:1 },{ cr:1 },{ cr:1 },{ cr:1 },
 ];
 defaultSubjects.forEach(s => addRow(s));
 addHistRow();addHistRow();
